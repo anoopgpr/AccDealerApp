@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+.swichtab-controller {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  padding: 15px;
+  list-style: none;
+  position: relative;
+
+}
+
+.swichtab-controller::before {
+  content: '';
+  position: absolute;
+  width: 74%;
+  border: 1px solid #a9a9a9;
+  right: 15%;
+  top: 42%;
+}
+
+
+.swichtab-controller > li {
+  flex: 1 1 auto;
+  font-weight: 500;
+z-index: 9;
+}
+
+.swichtab-controller > li:first-child {
+
+}
+
+.swichtab-controller > li > a {
+  display: flex;
+  height: 50px;
+  flex: 1 1 auto;
+  font-weight: 500;
+  text-decoration: none;
+  background: #a2a1a1;
+  padding: 5px;
+  border-radius: 50%;
+  width: 50px;
+  margin: 10px;
+}
+
+.swichtab-controller > li.is-active > a {
+
+  font-weight: 700;
+  background-color: red;
+}
+
+.swichtab-contents {
+
+
+  overflow: hidden;
+}
+
+.swichtab-panel {
+  display: none;
+}

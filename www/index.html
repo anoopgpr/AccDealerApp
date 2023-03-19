@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ACC Limited</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1, user-scalable=no,height=device-height">
+	<link rel="stylesheet" href="assets/css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/enroll.css">
+	<link rel="stylesheet" href="assets/css/mloyal.css">
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/css/vertical.min.css">
+	<link rel="stylesheet" href="assets/css/botui.min.css" />
+	<link rel="stylesheet" href="assets/css/botui-theme-custom.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css" media="all" />
+	<link rel="stylesheet" href="assets/css/owl.theme.default.css" media="all" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Source+Sans+3:wght@700&display=swap"
+		rel="stylesheet">
+
+	<script src="assets/js/jquery-1.11.1.min.js"></script>
+	<script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+	<script src="assets/js/botui.js"></script>
+	<script src="assets/js/delivery-bot.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet"
+		type="text/css">
+	<link rel="stylesheet" href="./src/css/base.css">
+	<link rel="stylesheet" href="./src/css/swichTab.css">
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#sidebar").enhanceWithin().panel();
+			$("#sidebar").hide();
+		})
+
+		var deviceType;
+
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+
+			deviceType = (navigator.userAgent.match(/iPad/i)) == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i)) == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+			if (deviceType == 'null')
+				deviceType = 'Android';
+
+
+			$("#sidebar").show();
+			$("#sidebar").enhanceWithin().panel();
+
+			//$("#sidebar2").show();
+
+			$("#site_new_popup").enhanceWithin().popup();
+
+			receivedEvent('deviceready');
+
+
+		}
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div data-role="page" data-dom-cache="false" id="gifslider" class="bg-white full_height" style="background: #fff;">
+
+		<div> <img src="assets/media/mloyalsplash.gif" style="max-width:400px; width:100%;display:block;margin:0 auto;">
+		</div>
+
+	</div>
+
+	<!--Login Page-->
+	<!-- <div data-role="page" data-dom-cache="true" id="page-forgot-password-dealer" class="login_bg full_height"
+		style="padding-bottom: 67px; min-height: 529px;">
+		<div data-role="content" class="ui-content pt-0 d-flex align-items-start login_content" role="main"
+			style="    background: linear-gradient(180deg, #5f8ce1, #abc2f4, transparent);">
+			<div class="all_size loginreg mt-20">
+				<div class="loginreg_inner">
+					<div class="login_logo mt-20" style="margin: 0 auto;">
+						<img src="assets/images/logo2.png" class="img-responsive" alt="">
+					</div>
+					<div id="google_translate_element" style="text-align: center;margin: 10px;"></div>
+
+					<h1 class="login_heading mt-20 " style="text-align: center;"><span id="spin_1">Dealer interphase for
+							Atoot Bandan</span> </h1>
+
+					<div class="form-group mt-20">
+						<label class="form_label">SAP Code<span style="color: red;">*</span></label>
+						<div class="custom-input">
+							<input type="text" id="forgot_cin" name="forgot_cin" placeholder="SAP Code"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+ 
+					<div class="form-group "> <a href="javascript:getOtp_dealer();"
+							class="btn btn_primary submit_btn ui-link">Get OTP</a>
+						<div class="clear"></div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div> -->
+
+     <!--OTP End Page-->
+
+	 <!--Login Page-->
+	<div data-role="page" data-dom-cache="true" id="page-login-dealer" class="login_bg full_height"
+		style="padding-bottom: 67px; min-height: 529px;">
+		<div data-role="content" class="ui-content pt-0 d-flex align-items-start login_content" role="main"
+			style="background: linear-gradient(180deg, #5f8ce1, #abc2f4, transparent);">
+			<div class="all_size loginreg mt-20">
+				<div class="loginreg_inner">
+					<div class="login_logo mt-20" style="margin: 0 auto;">
+						<img src="assets/images/logo2.png" class="img-responsive" alt="">
+					</div>
+					<!-- <div id="google_translate_element" style="text-align: center;margin: 10px;"></div> -->
+
+					<h1 class="login_heading mt-20 " style="text-align: center;"><span id="spin_1">Dealer interphase for
+							Atoot Bandan</span> </h1>
+
+					<div class="form-group mt-20" style="text-align: center;">
+						<!-- <label class="form_label">Username</label> -->
+						<div class="custom-input">
+							<input type="text" id="dealerusername" name="dealerusername" placeholder="SAP Code"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<div class="form-group" style="text-align: center;">
+					 
+						<div class="custom-input">
+							<input type="password" id="dealerpassword" name="dealerpassword" placeholder="Password"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+ 
+					<div class="form-group "> <a href="javascript:dealerauthenticate();"
+							class="btn btn_primary submit_btn ui-link">Login</a>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--page-->
+
+	<div data-role="page" data-dom-cache="true" id="addtransactions" class="full_height bg_white">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+			data-hide-during-focus="false">
+			<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile">
+						<div class="user_pic"> <span id="sortname">G</span> </div>
+					</a>
+					<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+							class="img-responsive" alt=""> </a>
+				</div>
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile-logo"> <img   src="./assets/images/logo4.png" class="img-responsive">
+					</a>
+				</div>
+
+				<div class="d-flex align-items-center justify-content-start">
+
+				</div>
+
+			</div>
+		</div>
+		<div class="all_size out_wrapper1 loginreg">
+			<div data-role="content" class=" ui-content p-20 align-items-start bg_white">
+				<div class="d-flex mt-70 align-items-center justify-content-start">
+					<h3>Add Transactions</h3>
+									</div>
+				<div class=" form-group mt-10"  >	
+					<label class="form_label ">Search Contractor </label>
+					<div class="custom-input">
+						<input type="text" id="tx_smobile_search" name="tx_smobile_search"
+							oninput="javascript:existingUser_check_byse1('tx_smobile_search');"
+							placeholder="Name / Mobile No." class="form-input" data-role="none" maxlength="50" />
+					</div>
+					<div class="clear"></div>
+				</div>
+				<input type="hidden" id="tx_smobile" />
+				<div>
+					<div class="csoscrole">
+						<p style="height:250%; margin-left: 15px;" id="searchlist_div">
+					</div>
+					<div class="clear"></div>
+					<!-- <button class=" btn btn_primary" onclick="javascript:existingUser_check_byse();" data-role="none"
+				style="margin-bottom: 10px;">Search</button> -->
+				</div>
+
+				<div id=tform style="display:none;">
+					<div class=" form-group">
+						<label class="form_label">Bill Date</label>
+						<div class="custom-input">
+							<input type="date" id="tx_date" class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+
+
+					<label class="form_label">Select Material Type<span style="color: red;">*</span></label>
+					<div class="">
+						<div class="select_role_block">
+							<select name="tx_city" onchange="getProductList('tx_showproductfilter')" id="tx_showproductfilter" data-role="none">
+							  <option value="" style="background-color:#fff" selected="selected">Select Material Type</option>
+							  <option value="Cement" style="background-color:#fff">Cement (Bags)</option>
+							  <!-- <option value="DUP" style="background-color:#fff">DUP</option> -->
+							  <option value="DRY MIX" style="background-color:#fff">DRY MIX (20 KG	Bags)</option>
+							  <option value="LEAK BLOCK" style="background-color:#fff">LEAK BLOCK (Ltr)</option>
+							</select>
+						</div>
+					</div><br>
+
+
+					<!-- <label class=" form_label">Product</label> -->
+				 
+					<div id="productlist_div"></div>
+					 <div id="productliq_div" style="display:none;">
+						<!-- <label class="form_label">Quantity In Leeter<span style="color: red;">*</span></label> -->
+
+						<!-- <div class="custom-input">
+							<div class="select_role_block">
+								<select name="tx_city" id="tx_Liquidleeter" data-role="none">
+									<option value="" style="background-color:#fff" selected="selected">-Quantity In
+										Litre*-</option>
+									<option value="500 ML" style="background-color:#fff">200 ML</option>
+									<option value="200 ML" style="background-color:#fff">500 ML</option>
+									<option value="2 L" style="background-color:#fff">2 L</option>
+									<option value="5 L" style="background-color:#fff">5 L</option>
+									<option value="10 L" style="background-color:#fff">10 L</option>
+									<option value="20 L" style="background-color:#fff">20 L</option>
+									<option value="50 L" style="background-color:#fff">50 L</option>
+								</select>
+							</div>
+						</div> -->
+						<label class="form_label">Container Quantity (Liquids)<span style="color: red;">*</span></label>
+			<div class="form-group">
+				<div class="custom-input">
+					<input type="number" id="tx_quantityLiquid" name="tx_quantityLiquid" placeholder="Container Quantity*" class="form-input"
+						data-role="none" />
+				</div>
+				<div class="clear"></div>
+			</div>
+					</div> 
+ 
+
+<!-- 
+					<div id="productbag_div">
+						<label class="form_label">Quantity<span style="color: red;">*</span></label>
+						<div class="form-group">
+							<div class="custom-input">
+								<input type="number" id="tx_quantity" name="tx_quantity"
+									placeholder="Bag/Container Quantity*" class="form-input" data-role="none" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div> -->
+
+					<div id="productbag_div" style="display:none;">
+						<label class="form_label">Bag Quantity<span style="color: red;">*</span></label>
+						<div class="form-group">
+							<div class="custom-input">
+								<input type="number" id="tx_quantity" name="tx_quantity" placeholder="Bag Quantity*" class="form-input"
+									data-role="none" onblur="javascript:calculateMt();" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<!-- <label class="form_label">Price per unit</label>
+					<div class=" form-group">
+						<div class="custom-input">
+							<input type="text" id="tx_rate" name="tx_rate" placeholder="Price per unit"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div> -->
+
+				 
+					<label class="form_label">Select Home Owner<span style="color: red;">*</span></label>
+					<div class="">
+						<div class="select_role_block">
+							<select name="tx_ihblist" id="tx_ihblist" data-role="none"
+								onchange="javascript:checkIhbNumber('tx_ihblist');">
+								<option value="" disabled="disabled" style="background-color:#3E3E3E"
+									selected="selected">Select Home Owner*</option>
+							</select>
+						</div>
+					</div><br>
+
+					<label class="form_label">Home Owner Mobile No.</label>
+					<div class="form-group">
+						<div class="custom-input">
+							<input type="number" id="tx_ihbmobile" name="tx_ihbmobile" placeholder="Home Owner Mobile No."
+								class="form-input" data-role="none" maxlength="10"
+								oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+								onblur="javascript:checkIhbNumber2('tx_ihbmobile');" />
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<label class="form_label">Home Owner Name</label>
+					<div class=" form-group">
+						<div class="custom-input">
+							<input type="text" id="tx_ihbname" name="tx_ihbname" placeholder="Home Owner Name"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<label class="form_label">Home Owner Address</label>
+					<div class=" form-group">
+						<div class="custom-input">
+							<input type="text" id="tx_address" name="tx_address" placeholder="Home Owner Address"
+								class="form-input" data-role="none" />
+						</div>
+						<div class="clear"></div>
+					</div>
+
+					<label style="font-size: 11px;">Contract Type </label>
+					<div class="">
+						<div class="select_role_block">
+							<select name="tx_matrialstatus" id="tx_matrialstatus" data-role="none">
+								<option value="" disabled="disabled" selected="selected">Select Contract Type </option>
+								<option value="Labour">Labour</option>
+								<option value="With Material">With Material</option>
+							</select>
+						</div>
+					</div><br>			
+
+					<!-- <label class="form_label">IHB Pin Code</label>
+					<div class=" form-group">
+						<div class="custom-input">
+							<input type="number" id="tx_ihbpincode" name="tx_ihbpincode" placeholder="IHB Pin Code"
+								maxlength="6" class="form-input" data-role="none"
+								oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+						</div>
+						<div class="clear"></div>
+					</div> -->
+					<br><br><button class="btn btn_primary" onclick="javascript:tx_Submit();" data-role="none"
+						style="margin-bottom: 125px;">Submit</button>
+				</div>
+			</div>
+		  </div>
+		<div class="overlay"></div>
+	</div>
+<!-- Endaddtransactions -->
+
+ 
+ 
+	 
+ 
+
+	<!-- my contractor -->
+	<div data-role="page" data-dom-cache="true" id="my_contractor" class="full_height bg_white">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+		data-hide-during-focus="false">
+		<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+			<div class="d-flex align-items-center justify-content-start">
+				<a href="#" class="user_profile">
+					<div class="user_pic"> <span id="sortname1">G</span> </div>
+				</a>
+				<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+						class="img-responsive" alt=""> </a>
+			</div>
+			<div class="d-flex align-items-center justify-content-start">
+				<a href="#" class="user_profile-logo"> <img  src="./assets/images/logo4.png" class="img-responsive">
+				</a>
+			</div>
+
+			<div class="d-flex align-items-center justify-content-start">
+
+			</div>
+
+		</div>
+	</div>
+
+		<div data-role="content" class="ui-content p-20 align-items-start inner_content1 br_t_20 bg_white">
+			<div class="d-flex mt-30 align-items-center justify-content-start">
+				<h3>View Contractor</h1>
+							</div>
+			<div class="primary_section mb-40">
+				<div class="primary_section_inner">
+					 
+					 
+<ul id="my_contractor_div" data-role="listview" data-filter="true" data-filter-placeholder="Search.." data-inset="true">
+						
+						<li>
+							<h2>Loading Contractors list..</h2>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	 
+	</div>
+<!-- my End contractor -->
+
+	<!-- my txns -->
+	<div data-role="page" data-dom-cache="true" id="my_txnslist" class="full_height bg_white">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+			data-hide-during-focus="false">
+			<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile">
+						<div class="user_pic"> <span id="sortname2">G</span> </div>
+					</a>
+					<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+							class="img-responsive" alt=""> </a>
+				</div>
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile-logo"> <img  src="./assets/images/logo4.png" class="img-responsive">
+					</a>
+				</div>
+
+				<div class="d-flex align-items-center justify-content-start">
+
+				</div>
+
+			</div>
+		</div>
+		<div data-role="content" class="ui-content p-20 align-items-start inner_content1 br_t_20 bg_white">
+			<div class="d-flex mt-30 align-items-center justify-content-start">
+				<h3>View Transactions History</h1>
+							</div>
+			<div class="primary_section mb-40">
+				<div class="primary_section_inner">
+					<ul id="my_txnslist_div" data-role="listview" data-filter="true" data-filter-placeholder="Search.."
+						data-inset="true">
+						<li>
+							<h2>Loading Contractors list..</h2>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		 
+	</div>
+<!-- my Endtxns -->
+	 
+
+  
+ 
+
+
+	<!-- Attot Contact Page-->
+
+
+	<div data-role="page" data-dom-cache="true" id="contact" class="full_height bg_white">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+			data-hide-during-focus="false">
+			<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile">
+						<div class="user_pic"> <span id="sortname3">G</span> </div>
+					</a>
+					<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+							class="img-responsive" alt=""> </a>
+				</div>
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile-logo"> <img  src="./assets/images/logo4.png" class="img-responsive">
+					</a>
+				</div>
+
+				<div class="d-flex align-items-center justify-content-start">
+
+				</div>
+
+			</div>
+		</div>
+		<div class="mt-50 all_size loginreg">
+			<div class="sidemenu_header1">
+				<a href="#" class="profile_header_inner ui-link">
+					<div class="">
+						<div>
+							<div class="profile_pic-new profile_pic_sidemenu-new">
+								<img src="assets/images/user_pic.png" id="update_photo1"
+									onclick="javascript:capturePhoto_profile();" class="img-responsive" alt=""
+									onerror="this.src='assets/images/user_pic.png';">
+
+							</div>
+							<!-- <p class="user_id font_sm">&nbsp;My Location</p> -->
+						</div>
+						<div class="profile_content">
+							<h3 id="profilenm1" class="user_name"><span id="user_name">Dealer Name</span></h3>
+							<!-- <p class="user_id font_sm"><span id="user_mobile"></span></p> -->
+
+						</div>
+						<div class="contact-item" style="
+						right: 0;
+						float: right;
+						position: absolute;
+					">
+							<!-- <img src="assets/images/phone-icon.png" class="img-responsive" alt=""> -->
+							<div> </div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="corporate">
+				<div class="corporate-add">
+					<p class="cor">
+						Corporate Office
+					</p>
+					<p>
+						<b>Cement House</b> <br>
+						121, Maharshi Karve Road Mumbai - <br>
+						400 020, India
+					</p>
+					<div class="contact-item">
+						<img src="assets/images/phone-icon.png" class="img-responsive" alt="" style="width:18px">
+						<p style="line-height:1 ;"> +91-22-41593 321 / 6665432</p>
+
+					</div>
+
+				</div>
+				<!--Footer-->
+			</div>
+
+			<div class="contact-sec">
+				<p>Helpline Email Id</p>
+				<div class="contact-item">
+					<img src="assets/images/inbox-icon.png" class="img-responsive" alt="">
+					<div><a href="mailTo:acchelp@acclimited.com">acchelp@acclimited.com</a></div>
+				</div>
+			</div>
+			<div class="contact-sec">
+				<p>Customer Support Number</p>
+				<div class="contact-item">
+					<img src="assets/images/phone-icon.png" class="img-responsive" alt="">
+					<div><a href="tel:18001033444">1800-103-3444</a></div>
+				</div>
+			</div>
+			<div class="contact-sec pb-100">
+				<p>Website</p>
+				<div class="contact-item">
+					<img src="assets/images/globe-icon.png" class="img-responsive" alt="">
+					<div><a href="http://www.acchelp.in/" target="_blank">www.acchelp.in</a></div>
+				</div>
+			</div>
+		</div>
+		 
+	</div>
+
+
+
+
+	<!--Page Contact end-->
+
+ 
+
+ 
+ 
+
+ 
+<!--enrolled constructor list  -->
+
+	<div data-role="page" data-dom-cache="true" id="enroleContractor" class="login_bg full_height">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+			data-hide-during-focus="false">
+			<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile">
+						<div class="user_pic"> <span id="sortname4">G</span> </div>
+					</a>
+					<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+							class="img-responsive" alt=""> </a>
+				</div>
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile-logo"> <img  src="./assets/images/logo4.png" class="img-responsive">
+					</a>
+				</div>
+
+				<div class="d-flex align-items-center justify-content-start">
+
+				</div>
+
+			</div>
+		</div>
+		<div class="all_size sidemenu_header mt-50">
+			<a href="#my_profile" class="profile_header_inner ui-link">
+				<div class="">
+
+					<div class="profile_pic profile_pic_sidemenu"
+						style="width: 100%;height: 100%;top: 23px;margin: 0 auto;border: solid 2px;">
+						<img src="assets/images/user_pic.png" id="update_photo"
+							onclick="javascript:capturePhoto_profile();" class="img-responsive"
+							style="height: 100px; width: 100px;" alt=""
+							onerror="this.src='assets/images/user_pic.png';">
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="all_size loginreg" style="margin-bottom: 75px;">
+			<div class="loginreg_inner mb-10 mt-10">
+				<div class="form-group">
+					<label class="form_label">First Name:<span style="color: red;">*</span></label>
+					<div class="custom-input">
+						<input type="text" id="update_firstname_de"   name="update_firstname" placeholder="First Name"
+							class="form-input update_firstname_de" data-role="none" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="form-group">
+					<label class="form_label">Last Name:</label>
+					<div class="custom-input">
+						<input type="text" id="update_lastname_de" placeholder="Last Name" class="form-input update_firstname_de"
+							data-role="none" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="form-group">
+					<label class="form_label">Primary Mobile:<span style="color: red;">*</span></label>
+					<div class="custom-input">
+						<input type="text" id="update_mobile_de" placeholder="Primary Mobile" maxlength="10"
+							class="form-input" data-role="none"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<!-- <div class="form-group">
+					<label class="form_label">Alternate Mobile:</label>
+					<div class="custom-input">
+						<input type="text" id="update_mobile2_de" placeholder="Alternate Mobile" maxlength="10"
+							class="form-input" data-role="none"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+					</div>
+					<div class="clear"></div>
+				</div> -->
+
+				<div class="form-group">
+					<label class="form_label">Date of Birth:</label>
+					<div class="custom-input">
+						<input type="date" id="update_dob_de" class="form-input" data-role="none"
+							onblur="javascript:isDate18orMoreYears('update_dob_de');" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+
+
+				<label class="form_label">Gender:<span style="color: red;">*</span></label>
+				<div class="d-flex">
+					<div class="padding0_10px">
+						<label class="mb-0 custom_check">
+							<input type="radio" name="update_gender_de" id="update_gender_male_de" data-role="none"
+								value="Male" data-cacheval="false" checked /> <span
+								class="custom_radio"></span>Male</label>
+					</div>
+					<div class="padding0_10px">
+						<label class="mb-0 custom_check">
+							<input type="radio" name="update_gender_de" id="update_gender_female_de" data-role="none"
+								value="Female" data-cacheval="false" /> <span class="custom_radio"></span>Female</label>
+					</div>
+				</div>
+				<div class="clear"></div>
+
+				<div id="kyc_div">
+					<div class="kyc_header">Document:</div>
+					<div class="form-group">
+						<div class="select_role_block">
+							<select name="update_kyc_doc_type_de" id="update_kyc_doc_type_de" data-role="none" onchange="javascript:setFileName();">
+								<option  selected="selected">Select Doc Type</option>
+								<option value="pancard" >Pan Card</option>
+								<option value="aadharcard" >Aadhar Card</option>
+								<option value="drivinglicense">Driving License</option>
+							</select>
+						</div><br>
+						<div class="form-group">
+							<label class="form_label">Document ID No:<span style="color: red;">*</span></label>
+							<div class="custom-input">
+								<input type="number" id="update_doc_number_de" placeholder="Document ID No" class="form-input"
+									data-role="none" maxlength="12"
+									oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+									onblur="javascript:checkaadhar('update_aadharno_de');" style="text-transform:uppercase" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div id="update_kyc_type_doc">
+						<div class="form-group">
+							<form id="form" action="https://taghash.co/Atoot-Bandhan-Dealer/upload.php" method="post" enctype="multipart/form-data">
+							<label class="form_label">Document Photo:</label>
+							<input type="hidden" class="form-control" id="name" name="name" placeholder="Enter name" required />
+							<input id="uploadImage" type="file" accept="image/*" name="image" />
+							<div id="preview"><img src="assets/images/camera.png"  style="height: 50px;"/></div><br>
+                            <input class="btn btn-success" type="button" onclick="restrictuploadfile()" value="Upload">
+							<div class="clear"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- <video id="video" width="320" height="240" autoplay style="display:none;"></video>
+				<button id="click-photo" onclick="javascript:capturePic();" style="display:none;">Click Photo</button>
+				<canvas id="canvas" width="320" height="240" style="display:none;"></canvas> -->
+
+				<div class="form-group">
+					<label class="form_label">Address:</label>
+					<div class="custom-input">
+						<input type="text" id="update_address_de" name="update_address_de" placeholder="Address"
+							class="form-input" data-role="none" />
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="ui-grid-solo form-group">
+					<label class="form_label">State:<span style="color: red;">*</span></label>
+					<div class="ui-block-a">
+						<div class="form-input">
+							<select name="update_state_de" onchange="javascript:showproDistrictList();"
+								id="update_state_de" data-role="none" class="form-control">
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-grid-solo form-group">
+					<label class="form_label">District:<span style="color: red;">*</span></label>
+					<div class="ui-block-a">
+						<div class="form-input">
+							<select name="update_district_de" onchange="javascript:showproDistrictCityList();"
+								id="update_district_de" data-role="none" class="form-control">
+								<option value="" disabled="disabled" style="background-color:#3E3E3E"
+									selected="selected">-Select District-</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-grid-solo form-group">
+					<label class="form_label">City:<span style="color: red;">*</span></label>
+					<div class="ui-block-a">
+						<div class="form-input">
+							<select name="update_city_de" id="update_city_de" data-role="none" class="form-control">
+								<option value="" disabled="disabled" style="background-color:#3E3E3E"
+									selected="selected">-Select City-</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-grid-solo form-group">
+					<label class="form_label">Running Sites:<span style="color: red;">*</span></label>
+					<div class="ui-block-a">
+						<div class="form-input">
+							<select name="update_runningsite_count" id="update_runningsite_count" data-role="none"
+								class="form-control">
+								
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group" id="update_runningsite_div1">
+					<div class="custom-input">
+						<label class="form_label">Site 1<span style="color: red;">*</span></label>
+						<input type="number" id="update_rcount_ihbmobile1" name="update_rcount_ihbmobile1"
+							placeholder="IHB Mobile No." class="form-input" data-role="none" maxlength="10"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+						<hr class="hr_rcount">
+						<input type="text" id="update_rcount_ihbname1" name="update_rcount_ihbname1"
+							placeholder="IHB Name" class="form-input" data-role="none" />
+						<hr class="hr_rcount">
+							<label style="font-size: 11px;">Contract Type*</label>
+							<div class="">
+								<div class="select_role_block">
+									<select name="update_rcount_matrialstatus1" id="update_rcount_matrialstatus1" data-role="none">
+										<option value="" disabled="disabled" selected="selected">Select Contract Type </option>
+										<option value="With Material">With Material</option>
+										<option value="Labour">Labour</option>
+									</select>
+								</div>
+							</div>		
+						
+						<button class="addconbtn" id="update_rcount_ihbmobile1_button"
+							onclick="javascript:site_Reg('update_rcount_ihbname1','update_rcount_ihbmobile1','update_rcount_ihbmobile1_button','update_rcount_matrialstatus1');"
+							data-role="none">add</button>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div class="form-group" id="update_runningsite_div2">
+					<div class="custom-input">
+						<label class="form_label">Site 2<span style="color: red;">*</span></label>
+						<input type="number" id="update_rcount_ihbmobile2" name="update_rcount_ihbmobile2"
+							placeholder="IHB Mobile No." class="form-input" data-role="none" maxlength="10"
+							oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
+						<hr class="hr_rcount">
+						<input type="text" id="update_rcount_ihbname2" name="update_rcount_ihbname2"
+							placeholder="IHB Name" class="form-input" data-role="none" />
+							<hr class="hr_rcount">	
+							<label style="font-size: 11px;">Contract Type*</label>
+							<div class="">
+								<div class="select_role_block">
+									<select name="update_rcount_matrialstatus2" id="update_rcount_matrialstatus2" data-role="none">
+										<option value="" disabled="disabled" selected="selected">Select Contract Type </option>
+										<option value="With Material">With Material</option>
+										<option value="Labour">Labour</option>
+									</select>
+								</div>
+							</div>		
+						
+						<button class="addconbtn" id="update_rcount_ihbmobile2_button"
+							onclick="javascript:site_Reg('update_rcount_ihbname2','update_rcount_ihbmobile2','update_rcount_ihbmobile2_button','update_rcount_matrialstatus2');"
+							data-role="none">add</button>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<br>
+
+				<div class="form-group "> <a href="javascript:EnroledContractor();"
+						class="btn btn_primary submit_btn ui-link">SUBMIT</a>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="overlay"></div>
+		</div>
+
+		<div class="overlay"></div>
+	 
+	</div>
+
+	<!--enrolled End constructor list  -->
+
+ 
+
+
+
+
+
+
+
+	<!--Home Page-->
+	<div data-role="page" data-dom-cache="true" id="homepage" class="full_height bg_img"
+		style="background-color:rgb(243 243 243);">
+		<div data-role="header" class="all_size inner_header" data-position="fixed" data-tap-toggle="false"
+			data-hide-during-focus="false">
+			<div class="d-flex align-items-center justify-content-between main_header bg_img  ">
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile">
+						<div class="user_pic"> <span id="sortname5">G</span> </div>
+					</a>
+					<a href="#sidebar" class="sidemenu_btn" data-role="none"> <img src="assets/images/menu_icon.png"
+							class="img-responsive" alt=""> </a>
+				</div>
+				<div class="d-flex align-items-center justify-content-start">
+					<a href="#" class="user_profile-logo"> <img  src="./assets/images/logo4.png" class="img-responsive">
+					</a>
+				</div>
+
+				<div class="d-flex align-items-center justify-content-start">
+
+				</div>
+
+			</div>
+		</div>
+		<!-- <div class="">
+
+			<div id="myCarousel" class="all_size carousel slide" data-ride="carousel"
+				style="    box-shadow: -1px 15px 5px 4px #0000002e;">
+
+
+				
+				<div class="carousel-inner mrb ">
+					<div class="item active ">
+						<img src="./assets/images/app_images/banner.jpg" alt="" style="width:100%; height: auto;">
+					</div>
+
+					<div class="item">
+						<img src="./assets/images/app_images/banner.jpg" alt="Chicago"
+							style="width:100%; height: auto;">
+					</div>
+
+					<div class="item">
+						<img src="./assets/images/app_images/banner.jpg" alt="New york"
+							style="width:100%; height: auto;">
+					</div>
+
+				</div>
+
+				
+
+			</div>
+		</div> -->
+
+		<div class="">
+
+			<div id="myCarousel" class="all_size carousel slide" data-ride="carousel"
+				style="    box-shadow: -1px 15px 5px 4px #0000002e;">
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner mrb ">
+					<div class="item active ">
+						<img src="./assets/images/app_images/banner.jpg" alt="" style="width:100%; height: auto;">
+					</div>
+
+					<div class="item">
+						<img src="./assets/images/app_images/banner.jpg" alt="Chicago"
+							style="width:100%; height: auto;">
+					</div>
+
+					<div class="item">
+						<img src="./assets/images/app_images/banner.jpg" alt="New york"
+							style="width:100%; height: auto;">
+					</div>
+
+				</div>
+
+				<!-- Left and right controls -->
+
+			</div>
+		</div>
+
+		<div class="all_size out_wrapper1 ">
+
+			<div class="inner_wrapper2">
+
+				<div class="mt-0 mb-30 icons-sec">
+					<!-- <div class="service-icons">
+						<img src="assets/images/app_images/member_approve.png" alt="">
+						<p>Add Transactions</p>
+					</div> -->
+					<div class="service-icons" onclick="javascript:addtxns_pg();">
+						<img src="assets/images/app_images/member_approve.png" alt="">
+						<p>Add Transactions</p>
+					</div>
+					<div class="service-icons" onclick="javascript:viewContractors();">
+						<img src="assets/images/app_images/viewcontractor.png" alt="">
+						<p>View Contractors</p>
+					</div>
+					<div class="service-icons" onclick="javascript:viewTransactions();">
+						<img src="assets/images/app_images/buget.png" alt="">
+						<p>View Transactions History</p>
+					</div>
+				</div>
+
+
+
+
+				<!-- <div class="mt-30 mb-60 social33">
+					<h3 class="pro_cat_txt" style="margin-bottom: 10px;">Social Feed</h3>
+					<div class="d-flex flex-wrap align-items-center justify-content-between">
+						<div id="socialslider" class="owl-carousel owl-theme ">
+							<div class="item">
+								<a href="javascript:showFbNew_1();"><img src="assets/images/Facebook.png" alt=""></a>
+							</div>
+							<div class="item">
+								<a href="javascript:showTwitterNew_1();"><img src="assets/images/twitter.png"
+										alt=""></a>
+							</div>
+
+							<div class="item">
+								<a href="javascript:showYoutubeNew_1();"><img src="assets/images/Youtube.png"
+										alt=""></a>
+							</div>
+							<div class="item">
+								<a href="javascript:showInstagram_1();"><img src="assets/images/instagram.png"
+										alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<h3 class="mt-30 pro_cat_txt">Bandhan</h3>
+				<div class="sale" style="margin-top: 10px;">
+				<img src="assets/images/bandhan.png" onclick="javascript:openpdf('https://taghash.co/accpd/BandhanDetailer-Central.pdf')"  alt="">
+				</div>
+				
+				<div class="mt-30 mb-80">
+					<h3 class="pro_cat_txt">Product Detailer</h3>
+					<div class="d-flex flex-wrap align-items-center justify-content-between">
+						<div id="ProductCat" class="owl-carousel owl-theme">
+							<div class="item">
+								<a class="thumb-product_PC ui-link">
+									<div class="thumb_icon test">
+										<div class="product_text">HPC </div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/HPC AD BAG.pdf')" src="assets/images/products/HPC.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">SURAKSHA Power Plus</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/SURAKSHA Power Plus.pdf');" src="assets/images/products/SURAKSHAPowerPlus.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link">
+									<div class="thumb_icon test">
+										<div class="product_text">SURAKSHA Power</div>
+										<img  onclick="javascript:openpdf('https://taghash.co/accpd/SURAKSHA Power.pdf')" src="assets/images/products/SURAKSHAPower.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link">
+									<div class="thumb_icon test">
+										<div class="product_text">Concrete plus</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/Concrete plus xtra strong.pdf')" src="assets/images/products/concreteplus.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link">
+									<div class="thumb_icon test">
+										<div class="product_text">F2R </div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/F2R SuperFast.pdf')" src="assets/images/products/F2RSuperFast.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link">
+									<div class="thumb_icon test">
+										<div class="product_text">Gold Water Shield</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/Gold Water Shield.pdf')" src="assets/images/products/GoldWaterShield.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+							
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">LB-202</div>
+										<img  onclick="javascript:openpdf('https://taghash.co/accpd/ACC LeakBlock Cement Mix LB-202.pdf');" src="assets/images/products/LB-202.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">LB-303</div>
+										  <img  onclick="javascript:openpdf('https://taghash.co/accpd/ACC LeakBlock Cement Mix LB-303.pdf')" src="assets/images/products/LB-303.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">XT 444</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/ACC  Xtra Premium White Adhesive -XT 444.pdf')" src="assets/images/products/XT444.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+					
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">XT 333</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/ACC  Xtra Strong Tile Adhesive -XT 333.pdf');" src="assets/images/products/XT333.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+							
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">XT 222</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/ACC  Xtra Strong Tile Adhesive -XT 222.pdf')" src="assets/images/products/XT222.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">XT 111</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/ACC Xtra Strong Tile Adhesive -XT 111.pdf')" src="assets/images/products/XT111.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+			
+							<div class="item">
+								<a class="thumb-product_PC ui-link ">
+									<div class="thumb_icon test">
+										<div class="product_text">LB 101</div>
+										<img onclick="javascript:openpdf('https://taghash.co/accpd/ACC LeakBlock Waterproof Plaster - LB 101.pdf')" src="assets/images/products/LB101.png" alt="" class="image34 image">
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+			</div>
+
+
+			<div class="overlay"></div>
+		</div>
+
+		<!-- enrole contractor by Dealer -->
+	</div>
+
+
+
+ 	<!-- side bar page -->
+	 <div data-role="panel" id="sidebar" data-display="overlay" data-overlay-theme="a" class="">
+		<div class="le">
+			<div class="sidemenu_header ">
+				<a href="#" class="profile_header_inner">
+					<div class="">
+						<div>
+							<div class="profile_pic-new profile_pic_sidemenu-new">
+								<img src="assets/images/user_pic.png" id="update_photo1"
+									onclick="javascript:capturePhoto_profile();" class="img-responsive" alt=""
+									onerror="this.src='assets/images/user_pic.png';" />
+
+							</div>
+							<!-- <p class="user_id font_sm">&nbsp;My Location</p> -->
+						</div>
+						<div class="profile_content">
+							<h6 id="user_name_se1" style="font-weight: 600;">Guest</h6>
+							<p class="user_id font_sm" id="user_id1_se"></p>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="side_navs">
+				<ul>
+					<li><a href="#homepage"><img src="./assets/images/app_images/home.png" class="img-responsive"><span>Home</span> </a></li>
+					<!-- <li><a href="#enroleContractor"><img src="./assets/images/app_images/contect.png" class="img-responsive"><span>Enroll Contractor</span> </a></li> -->
+					<li><a href="#addtransactions" ><img src="./assets/images/app_images/member_approve.png" class="img-responsive"><span>Add Transactions</span> </a></li>
+					<li><a onclick="javascript:viewContractors();" href="#my_contractor"><img src="./assets/images/app_images/viewcontractor.png"  class="img-responsive"><span>View Contractors</span> </a></li>
+					<li><a onclick="javascript:viewTransactions();"  href="#my_txnslist"><img src="./assets/images/app_images/buget.png" class="img-responsive"><span>View Transactions History</span> </a></li>
+					<li><a href="#contact"><img src="./assets/images/app_images/contect.png" class="img-responsive"><span>Contact Us</span> </a></li>
+				</ul>
+				<div class="side_navs1">
+					<ul>
+
+						<li> <a href="javascript:logoutApp();"><img src="./assets/images/app_images/menu_icon.png"
+									class="img-responsive"> <span>Logout</span> </a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="wait"
+		style="display:none;width:69px;height:89px;border:0px solid black;position:absolute;top:50%;left:40%;padding:2px;">
+		<img src="assets/img/load.gif" width="60" height="60" /></div>
+
+
+	<div class="counter_pop_inner" id="site_new_popup">
+		<div class="form-group text-center">
+			<label>Site will be registered first before transaction</label>
+		</div>
+		<div class="ui-grid-solo mt-20">
+			<div class="text-center"> <a href="javascript:close_site_new_popup();"
+					class="btn btn_primary2 pop_btn">OK</a> </div>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery.mousewheel.min.js"></script>
+	<script src="assets/js/mloyal.js"></script>
+	<script>
+		jQuery("#icon-slider").owlCarousel({
+			autoplay: true,
+			rewind: true, /* use rewind if you don't want loop */
+			margin: 10,
+			/*
+		   animateOut: 'fadeOut',
+		   animateIn: 'fadeIn',
+		   */
+			responsiveClass: true,
+			autoHeight: true,
+			autoplayTimeout: 7000,
+			smartSpeed: 500,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 4
+				},
+
+				600: {
+					items: 4
+				},
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
+					items: 4
+				}
+			}
+		});
+	</script>
+
+	<script>
+		jQuery("#numberslider").owlCarousel({
+			autoplay: true,
+			rewind: true, /* use rewind if you don't want loop */
+			margin: 10,
+			/*
+		   animateOut: 'fadeOut',
+		   animateIn: 'fadeIn',
+		   */
+			responsiveClass: true,
+			autoHeight: true,
+			autoplayTimeout: 7000,
+			smartSpeed: 500,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 4
+				},
+
+				600: {
+					items: 4
+				},
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
+					items: 4
+				}
+			}
+		});
+	</script>
+	<script>
+		jQuery("#uspslider").owlCarousel({
+			autoplay: true,
+			rewind: true, /* use rewind if you don't want loop */
+			margin: 10,
+			/*
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			*/
+			responsiveClass: true,
+			autoHeight: true,
+			autoplay: true,
+			smartSpeed: 500,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 3.5
+				},
+
+				600: {
+					items: 3.5
+				},
+
+				1024: {
+					items: 3
+				},
+
+				1366: {
+					items: 3
+				}
+			}
+		});
+	</script>
+	<script>
+		jQuery("#socialslider").owlCarousel({
+			autoplay: true,
+			rewind: true, /* use rewind if you don't want loop */
+			margin: 10,
+			/*
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			*/
+			responsiveClass: true,
+			autoHeight: true,
+			autoplay: true,
+			smartSpeed: 500,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 2.5
+				},
+
+				600: {
+					items: 2.5
+				},
+
+				1024: {
+					items: 4
+				},
+
+				1366: {
+					items: 4
+				}
+			}
+		});
+	</script>
+	<script>
+		jQuery("#ProductCat").owlCarousel({
+			autoplay: true,
+			rewind: true, /* use rewind if you don't want loop */
+			margin: 10,
+			/*
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			*/
+			responsiveClass: true,
+			autoHeight: true,
+			autoplay: true,
+			smartSpeed: 500,
+			nav: false,
+			dots: true,
+			responsive: {
+				0: {
+					items: 2.5
+				},
+
+				600: {
+					items: 5
+				},
+
+				1024: {
+					items: 6
+				},
+
+				1366: {
+					items: 8
+				}
+			}
+		});
+
+	</script>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+
+	<script src="./src/js/jquery.swichTab.js" charset="utf-8"></script>
+	<!--<script type="text/javascript">
+  $('.tabGroup1').swichTab();
+  $('.tabGroup2').swichTab({
+	cahngePanel: 'fade',
+	swiper: true,
+	index: 0,
+  });
+</script>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-36251023-1']);
+_gaq.push(['_setDomainName', 'jqueryscript.net']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>-->
+
+
+
+
+
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+	<!-- <script>
+	$(".popup").hide();
+	$("#otp-submit").on('click', function(){
+	$(".popup").show(1000);
+	$("#pg").addClass('pg-overlay')
+	});
+
+	$("#cancel").on('click',function(){
+	$(".popup").hide();
+	$("#pg").removeClass('pg-overlay')
+	});
+</script> -->
+
+
+
+
+
+
+	<script>
+
+		$("#toggleFilter1").on("click", function () {
+			$(".overlay").fadeIn("fast");
+			$("#filter_panel1").slideDown("fast");
+		});
+		$("#filterClose1").on("click", function () {
+			$("#filter_panel1").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		});
+		$(".overlay").on("click", function () {
+			$("#filter_panel1").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		});
+		$("#toggleFilter21").on("click", function () {
+			$(".overlay").fadeIn("fast");
+			$("#filter_panel21").slideDown("fast");
+		});
+		$("#filterClose2, .filter_close1").on("click", function () {
+			$("#filter_panel21").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		});
+		$(".overlay").on("click", function () {
+			$("#filter_panel21").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		});
+
+		$("#toggleFilter2").on("click", function () {
+			$(".overlay").fadeIn("fast");
+			$("#filter_panel2").slideDown("fast");
+		})
+		$("#filterClose2").on("click", function () {
+			$("#filter_panel2").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		})
+		$(".overlay").on("click", function () {
+			$("#filter_panel2").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		})
+		$('input[type=radio][name=input_email_statement]').change(function () {
+			if (this.value == 'selectduration') {
+				$("#dateduration").show();
+			} else {
+				$("#dateduration").hide();
+			}
+		});
+
+		$("#ptsEarn").on("click", function () {
+			$(".overlay").fadeIn("fast");
+			$("#filter_panel3").slideDown("fast");
+			$(".redeem-pts").hide();
+			$(".earn-pts").show();
+		});
+		$("#ptsRedeem").on("click", function () {
+			$(".overlay").fadeIn("fast");
+			$("#filter_panel3").slideDown("fast");
+			$(".redeem-pts").show();
+			$(".earn-pts").hide();
+		});
+		$(".filter-option").hide();
+		$("#filter-tran").on('click', function () {
+			$(".filter-option").show();
+		});
+
+		$("#earn").on('click', function () {
+			$(".earn-pts").show();
+			$(".filter-option").hide();
+			$(".redeem-pts").hide();
+			$("input:radio[id=earn]:checked")[0].checked = false;
+			$("input:radio[id=redeem]:checked")[0].checked = false;
+
+		});
+		$("#redeem").on('click', function () {
+			$(".earn-pts").hide();
+			$(".filter-option").hide();
+			$(".redeem-pts").show();
+			$("input:radio[id=redeem]:checked")[0].checked = false;
+			$("input:radio[id=earn]:checked")[0].checked = false;
+
+		});
+
+		$(".overlay").on("click", function () {
+			$("#filter_panel3").slideUp("fast");
+			$(".overlay").fadeOut("fast");
+		})
+
+
+	</script>
+	<script>
+		$("#j-500").hide();
+		$("#j-1500").hide();
+		$("#j-2500").hide();
+		$("#j-3500").hide();
+		$("#j-4500").hide();
+		$("#j-5500").hide();
+		$("#j-6500").hide();
+		$("#j-7500").hide();
+		$("#j-8500").hide();
+
+		$("#j-btn-500").on('click', function () {
+			$("#j-500").show();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-1500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").show();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-2500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").show();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-3500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").show();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-4500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").show();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-5500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").show();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-6500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").show();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-7500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").show();
+			$("#j-8500").hide();
+		});
+
+		$("#j-btn-8500").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").show();
+		});
+
+		$(".fa-times").on('click', function () {
+			$("#j-500").hide();
+			$("#j-1500").hide();
+			$("#j-2500").hide();
+			$("#j-3500").hide();
+			$("#j-4500").hide();
+			$("#j-5500").hide();
+			$("#j-6500").hide();
+			$("#j-7500").hide();
+			$("#j-8500").hide();
+		});
+
+
+	</script>
+
+	<script>
+
+		$("#learning-reward").hide();
+		$("#family").hide();
+
+		$("#my-reward-btn").on('click', function () {
+			$("#my-reward").show();
+			$("#Learning-reward-btn").removeClass("reward-btn-active");
+			$("#Family-reward-btn").removeClass("reward-btn-active");
+			$(this).addClass("reward-btn-active");
+			$("#learning-reward").hide();
+			$("#family").hide();
+
+		});
+
+		$("#Learning-reward-btn").on('click', function () {
+			$("#learning-reward").show();
+			$("#my-reward").hide();
+			$("#family").hide();
+			$("#my-reward-btn").removeClass("reward-btn-active");
+			$("#Family-reward-btn").removeClass("reward-btn-active");
+			$(this).addClass("reward-btn-active");
+
+		});
+
+		$("#Family-reward-btn").on('click', function () {
+			$("#family").show();
+			$("#my-reward").hide();
+			$("#learning-reward").hide();
+			$("#my-reward-btn").removeClass("reward-btn-active");
+			$("#Learning-reward-btn").removeClass("reward-btn-active");
+			$(this).addClass("reward-btn-active");
+
+		});
+
+	</script>
+
+	<script>
+		$("#completed").hide();
+
+		$("#ongoing-site").on('click', function () {
+			$("#ongoing").show();
+			$("#completed").hide();
+			$("#completed-site").removeClass("reward-btn-active");
+			$(this).addClass("reward-btn-active");
+		});
+
+		$("#completed-site").on('click', function () {
+			$("#ongoing").hide();
+			$("#completed").show();
+			$("#ongoing-site").removeClass("reward-btn-active");
+			$(this).addClass("reward-btn-active");
+		});
+
+
+	</script>
+
+	<script>
+		document.getElementById("myinputrange").oninput = function () {
+			var value = (this.value - this.min) / (this.max - this.min) * 100
+			this.style.background = 'linear-gradient(to right, #ed1f24 0%, #ed1f24 ' + value + '%, #f7a4a6 ' + value + '%, #f7a4a6 100%)'
+		};
+
+
+
+	</script>
+
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,hi,bn,pa,ta,mr,te,gu,kn,ml', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+		}
+	</script>
+
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+ 
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-messaging.js"></script>
+
+<script>
+
+	
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBKnkn-iZ7MuBFJCaErO6vsOs5832CsL3I",
+    authDomain: "acc-atoot-bhandhan.firebaseapp.com",
+    projectId: "acc-atoot-bhandhan",
+    storageBucket: "acc-atoot-bhandhan.appspot.com",
+    messagingSenderId: "290098209166",
+    appId: "1:290098209166:web:a82fd5b9fdfc5a7cba44df"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const messaging=firebase.messaging();
+  //Custom function made to run firebase service 
+  	getStartToken();
+	//This code recieve message from server /your app and print message to console if same tab is opened as of project in browser 
+	messaging.onMessage(function(payload){
+	console.log("on Message",payload);
+	});
+
+function getStartToken(){
+		messaging.getToken().then((currentToken) => {
+		if (currentToken) {
+		sendTokenToServer(currentToken);
+		} 
+		else {
+		// Show permission request.
+		RequestPermission();
+		setTokenSentToServer(false);
+		}
+		}).catch((err) => {
+		setTokenSentToServer(false);
+		});
+}
+
+function RequestPermission(){
+		messaging.requestPermission()
+				.then(function(permission){
+						if (permission === 'granted') {
+						console.log("have Permission");
+						//calls method again and to sent token to server
+						getStartToken();
+						}
+ 						else{
+ 							console.log("Permission Denied");
+ 						}
+ 					 })
+					.catch(function(err){
+						console.log(err);
+						})
+}
+function sendTokenToServer(token){ 
+
+if (!isTokensendTokenToServer()) {
+
+
+	console.log(token);
+	localStorage.setItem("token",token);
+
+	//update_device_data();
+	
+	/*
+$.ajax({
+url: URL,
+type: 'POST',
+data: {
+//whatever you wanna send
+push_token:token,
+},
+success: function (response) {
+setTokenSentToServer(true);
+},
+error: function (err) {
+setTokenSentToServer(false);
+},
+});*/
+
+}
+}
+function isTokensendTokenToServer() {
+return window.localStorage.getItem('sendTokenToServer') === '1';
+}
+function setTokenSentToServer(sent) {
+window.localStorage.setItem('sendTokenToServer', sent ? '1' : '0');
+}
+
+
+</script>
+
+</body>
+
+</html>

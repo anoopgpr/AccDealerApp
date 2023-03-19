@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "521174529015",
+    "project_id": "acc-atoot-bandhan-dealer",
+    "storage_bucket": "acc-atoot-bandhan-dealer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521174529015:android:65ad200918a902cdb6f4f2",
+        "android_client_info": {
+          "package_name": "com.mobiquest.atootbandhandealer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521174529015-qjnb74ovvetdi15d0kkobr25ko8t9b19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMFfZ7IvhsLm4WvnNfH7Ln-RwHCgGafLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521174529015-qjnb74ovvetdi15d0kkobr25ko8t9b19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
